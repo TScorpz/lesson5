@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 2</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
+  <script src="js/script1.js"></script>
+  <script>
+    QUnit.test("Longest word in array", function(assert) {
+      assert.equal(findLongestWord(["one", "two", "three", "four"]), 5);
+      assert.equal(findLongestWord(["random", "words", "car", "flour"]), 6);
+      assert.equal(findLongestWord(["assignment", "lesson", "javascript", "school"]), 10);
+      assert.equal(findLongestWord(["apple", "plane", "homework", "table"]), 8);
+    });
+    QUnit.test("Sum function", function(assert) {
+      assert.equal(sum([1, 2, 3, 4]), 10);
+      assert.equal(sum([3, 6, 2, 4]), 15);
+      assert.equal(sum([12, 6, 3, 3]), 24);
+      assert.equal(sum([14, 5, 4, 7]), 30);
+    });
+    QUnit.test("Multiply function", function(assert) {
+      assert.equal(multiply([1, 2, 3, 4]), 24);
+      assert.equal(multiply([3, 6, 2, 4]), 144);
+      assert.equal(multiply([12, 6, 3, 3]), 648);
+      assert.equal(multiply([14, 5, 4, 7]), 1960);
+    });
+    QUnit.test("Expression evaluation function", function(assert) {
+      assert.equal(evaluateExpression(5, 7, "+"), 12);
+      assert.equal(evaluateExpression(4, 9, "-"), -5);
+      assert.equal(evaluateExpression(6, 4, "*"), 24);
+      assert.equal(evaluateExpression(24, 8, "/"), 3);
+    });
+    QUnit.test("Duplicate function", function(assert) {
+      assert.deepEqual(duplicate([1, 2, 3, 4]), [1, 2, 3, 4, 1, 2, 3, 4]);
+      assert.deepEqual(duplicate([3, 6, 2, 4]), [3, 6, 2, 4, 3, 6, 2, 4]);
+      assert.deepEqual(duplicate([12, 6, 3, 3]), [12, 6, 3, 3, 12, 6, 3, 3]);
+      assert.deepEqual(duplicate([14, 5, 4, 7]), [14, 5, 4, 7, 14, 5, 4, 7]);
+    });
+    QUnit.log(function() {
+      if(details.result) {
+        return;
+      }
+      var loc = details.module + ": " + details.name + ": ",
+        output = "FAILED: " + loc + ( details.message ? details.message + ", " : "");
+
+      if(details.actual) {
+        output += "expected: " + details.expected + ", actual: " + details.actual;
+      }
+      if (details.source) {
+        output += ", " + details.source;
+      }
+      console.log(output);
+    });
+  </script>
+</head>
+<body>
+  <div id="qunit"></div>
+</body>
+</html>
