@@ -38,21 +38,7 @@
       assert.deepEqual(duplicate([12, 6, 3, 3]), [12, 6, 3, 3, 12, 6, 3, 3]);
       assert.deepEqual(duplicate([14, 5, 4, 7]), [14, 5, 4, 7, 14, 5, 4, 7]);
     });
-    QUnit.log(function() {
-      if(details.result) {
-        return;
-      }
-      var loc = details.module + ": " + details.name + ": ",
-        output = "FAILED: " + loc + ( details.message ? details.message + ", " : "");
-
-      if(details.actual) {
-        output += "expected: " + details.expected + ", actual: " + details.actual;
-      }
-      if (details.source) {
-        output += ", " + details.source;
-      }
-      console.log(output);
-    });
+    fizzBuzz();
   </script>
 </head>
 <body>
