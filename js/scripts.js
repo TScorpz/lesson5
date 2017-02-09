@@ -29,6 +29,7 @@ var Calculate = (function() {
     },
     print: function() {
       console.log(sum);
+      return sum;
     }
   };
 })();
