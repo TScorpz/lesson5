@@ -59,22 +59,19 @@ var duplicate = function(numbers) {
   return numbers;
 };
 
-var fizzBuzz = function() {
-  for (var i = 1; i < 100; i++) {
-    if (i % 3 == 0) {
-      if (i % 5 == 0) {
-        console.log("fizzbuzz");
-      }
-      else {
-        console.log("fizz");
-      }
+var fizzBuzz = function(num) {
+  if (num % 3 == 0) {
+    if (num % 5 == 0) {
+      return "FizzBuzz";
     }
-    else if (i % 5 == 0) {
-      console.log("buzz");
+    else {
+      return "Fizz";
     }
   }
+  else if (num % 5 == 0) {
+    return "Buzz";
+  }
+  else {
+    return num;
+  }
 };
-
-$(document).ready(function() {
-  //console.log(findLongestWord(["assignment", "lesson", "javascript", "school"]));
-});

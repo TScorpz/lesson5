@@ -38,7 +38,56 @@
       assert.deepEqual(duplicate([12, 6, 3, 3]), [12, 6, 3, 3, 12, 6, 3, 3]);
       assert.deepEqual(duplicate([14, 5, 4, 7]), [14, 5, 4, 7, 14, 5, 4, 7]);
     });
-    fizzBuzz();
+    //fizzBuzz function test
+    var totalAttempts = 0;
+    var failedAttempts = 0;
+    for(var i = 0; i < 100; i++) {
+      var result = fizzBuzz(i);
+      if(i % 3 == 0 && i % 5 == 0) {
+        if(result == "FizzBuzz") {
+          console.log(result);
+        }
+        else {
+          failedAttempts++;
+          console.log('%c Expected "FizzBuzz" , got ' + result, 'background: red; color: white; display: block;');
+        }
+      }
+      else if(i % 3 == 0 && i % 5 != 0) {
+        if(result == "Fizz") {
+          console.log(result);
+        }
+        else {
+          failedAttempts++;
+          console.log('%c Expected "Fizz" , got ' + result, 'background: red; color: white; display: block;');
+        }
+      }
+      else if(i % 3 != 0 && i % 5 == 0) {
+        if(result == "Buzz") {
+          console.log(result);
+        }
+        else {
+          failedAttempts++;
+          console.log('%c Expected "Buzz" , got ' + result, 'background: red; color: white; display: block;');
+        }
+      }
+      else {
+        if(result == i) {
+          console.log(result);
+        }
+        else {
+          failedAttempts++;
+          console.log('%c Expected ' + i + ' , got ' + result, 'background: red; color: white; display: block;');
+        }
+      }
+      totalAttempts++;
+    }
+    //print results of the test
+    if(failedAttempts == 0 && totalAttempts == 100) {
+      console.log("%c Test completed successfuly with " + totalAttempts + "/" + totalAttempts + " passed attempts.", "background: green; color: white; display: block;");
+    }
+    else {
+      console.log("%c Test is finished with " + failedAttempts + "/" + totalAttempts + " failed attempts.", "background: red; color: white; display: block;");
+    }
   </script>
 </head>
 <body>
